@@ -1,4 +1,4 @@
-# CPSC 310 Project Repository
+# Web Development Project Repository
 
 This repository contains starter code for the class project.
 Please keep your repository private.
