@@ -1,0 +1,32 @@
+{
+  "title" : "Should not run when missing where. Should be rejected with InsightError",
+  "input": {
+
+    "OR":{
+
+      "GT":{
+
+        "courses_avg": 97
+
+      }
+
+    },
+
+    "OPTIONS":{
+
+      "COLUMNS":[
+
+        "courses_dept",
+
+        "courses_avg"
+
+      ],
+
+      "ORDER":"courses_avg"
+
+    }
+
+  },
+  "errorExpected": true,
+  "expected" : "InsightError"
+}

@@ -1,0 +1,19 @@
+{
+	"title": "checking it can work with an asterik right side space",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_dept": "adhe *"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"expected": [
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"title": "count in trans",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 98
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"countavg",
+				"courses_year",
+				"courses_id"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"courses_year",
+					"courses_id"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_year",
+				"courses_id"
+			],
+			"APPLY": [
+				{
+					"countavg": {
+						"COUNT": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"countavg":1,"courses_year":1900,"courses_id":"300"},{"countavg":1,"courses_year":1900,"courses_id":"421"},{"countavg":2,"courses_year":1900,"courses_id":"449"},{"countavg":2,"courses_year":1900,"courses_id":"509"},{"countavg":1,"courses_year":1900,"courses_id":"519"},{"countavg":1,"courses_year":1900,"courses_id":"527"},{"countavg":1,"courses_year":1900,"courses_id":"541"},{"countavg":2,"courses_year":1900,"courses_id":"578"},{"countavg":2,"courses_year":2009,"courses_id":"421"},{"countavg":1,"courses_year":2009,"courses_id":"527"},{"countavg":1,"courses_year":2009,"courses_id":"541"},{"countavg":1,"courses_year":2010,"courses_id":"578"},{"countavg":1,"courses_year":2011,"courses_id":"509"},{"countavg":1,"courses_year":2011,"courses_id":"519"},{"countavg":2,"courses_year":2012,"courses_id":"449"},{"countavg":1,"courses_year":2012,"courses_id":"574"},{"countavg":1,"courses_year":2013,"courses_id":"578"},{"countavg":1,"courses_year":2014,"courses_id":"449"},{"countavg":1,"courses_year":2015,"courses_id":"300"},{"countavg":1,"courses_year":2015,"courses_id":"509"}]
+}

@@ -1,0 +1,32 @@
+{
+  "title" : "Should not be able to give an invalid order with where being later than OR, should give InsightError",
+  "input": {
+
+    "OR":{
+
+      "WHERE":{
+
+        "courses avg": 99
+
+      }
+
+    },
+
+    "OPTIONS":{
+
+      "COLUMNS":[
+
+        "courses dept",
+
+        "courses avg"
+
+      ],
+
+      "ORDER":"courses avg"
+
+    }
+
+  },
+  "errorExpected": true,
+  "expected" : "InsightError"
+}

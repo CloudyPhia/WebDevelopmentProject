@@ -1,0 +1,37 @@
+{
+	"title": "apply count",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 98
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overallAvg",
+				"countUNIQUE",
+				"courses_instructor"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title",
+				"courses_instructor"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				},
+				{
+					"countUNIQUE": {
+						"COUNT": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected": [{"courses_title":"career planning","overallAvg":99.19,"countUNIQUE":1,"courses_instructor":"cox, daniel"},{"courses_title":"multimedia sys","overallAvg":98.75,"countUNIQUE":1,"courses_instructor":"coria, lino"},{"courses_title":"multimedia sys","overallAvg":98.75,"countUNIQUE":1,"courses_instructor":""},{"courses_title":"assess lrn diffi","overallAvg":98.39,"countUNIQUE":2,"courses_instructor":"cole, kenneth"},{"courses_title":"assess lrn diffi","overallAvg":98.36,"countUNIQUE":1,"courses_instructor":""},{"courses_title":"educ stds autism","overallAvg":98.71,"countUNIQUE":3,"courses_instructor":"grow, laura"},{"courses_title":"educ stds autism","overallAvg":98.67,"countUNIQUE":2,"courses_instructor":""},{"courses_title":"dev el sk df&hrd","overallAvg":98.45,"countUNIQUE":1,"courses_instructor":"cannon, joanna"},{"courses_title":"dev el sk df&hrd","overallAvg":98.45,"countUNIQUE":1,"courses_instructor":""},{"courses_title":"algb topology i","overallAvg":99.78,"countUNIQUE":1,"courses_instructor":"gomez, jose"},{"courses_title":"algb topology i","overallAvg":99.78,"countUNIQUE":1,"courses_instructor":""},{"courses_title":"cl pro prim care","overallAvg":98.71,"countUNIQUE":1,"courses_instructor":"brew, nancy"},{"courses_title":"cl pro prim care","overallAvg":98.46,"countUNIQUE":2,"courses_instructor":""},{"courses_title":"cl pro prim care","overallAvg":98.21,"countUNIQUE":1,"courses_instructor":"krist, jennifer"},{"courses_title":"fam nrs pract","overallAvg":98.5,"countUNIQUE":1,"courses_instructor":"burrows, marlene;harding, jillian;krist, jennifer;mccuaig, fairleth"},{"courses_title":"fam nrs pract","overallAvg":98.55,"countUNIQUE":2,"courses_instructor":""},{"courses_title":"work int health","overallAvg":98.98,"countUNIQUE":1,"courses_instructor":"frank, erica"},{"courses_title":"work int health","overallAvg":98.98,"countUNIQUE":1,"courses_instructor":""}]
+}

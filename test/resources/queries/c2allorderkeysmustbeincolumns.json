@@ -1,0 +1,61 @@
+{
+	"title": "all order keys in columns por favor",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"rooms_furniture": "*Tables*"
+					}
+				},
+				{
+					"GT": {
+						"rooms_seats": 300
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_address",
+				"rooms_type",
+				"rooms_number",
+				"rooms_name",
+				"rooms_furniture",
+				"rooms_href",
+				"rooms_lat",
+				"rooms_lon"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxSeats"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_address",
+				"rooms_type",
+				"rooms_number",
+				"rooms_name",
+				"rooms_furniture",
+				"rooms_href",
+				"rooms_lat",
+				"rooms_lon"
+			],
+			"APPLY": [
+				{
+					"maxSeats": {
+						"MAX": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"}

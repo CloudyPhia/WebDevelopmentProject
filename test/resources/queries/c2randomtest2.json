@@ -1,0 +1,70 @@
+{
+	"title": "random2",
+	"input":{
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"maxAvg",
+				"maxShit",
+				"countShit",
+				"minShit",
+				"sumSHIt"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"APPLY": [
+				{
+					"maxAvg": {
+						"MAX": "courses_avg"
+					}
+				},
+				{
+					"countShit": {
+						"COUNT": "courses_id"
+					}
+				},
+				{
+					"maxShit": {
+						"MAX": "courses_year"
+					}
+				},
+				{
+					"minShit": {
+						"MIN": "courses_year"
+					}
+				},
+				{
+					"sumSHIt": {
+						"SUM": "courses_pass"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"courses_dept":"cpsc","courses_avg":95,"maxAvg":95,"maxShit":2014,"countShit":1,"minShit":1900,"sumSHIt":2},{"courses_dept":"cpsc","courses_avg":94.5,"maxAvg":94.5,"maxShit":2007,"countShit":1,"minShit":1900,"sumSHIt":12},{"courses_dept":"cpsc","courses_avg":94,"maxAvg":94,"maxShit":2007,"countShit":1,"minShit":1900,"sumSHIt":10},{"courses_dept":"cpsc","courses_avg":93.5,"maxAvg":93.5,"maxShit":2011,"countShit":1,"minShit":1900,"sumSHIt":12},{"courses_dept":"cpsc","courses_avg":93.38,"maxAvg":93.38,"maxShit":2013,"countShit":1,"minShit":1900,"sumSHIt":16},{"courses_dept":"cpsc","courses_avg":92.75,"maxAvg":92.75,"maxShit":2012,"countShit":1,"minShit":1900,"sumSHIt":16},{"courses_dept":"cpsc","courses_avg":92.63,"maxAvg":92.63,"maxShit":2009,"countShit":1,"minShit":1900,"sumSHIt":16},{"courses_dept":"cpsc","courses_avg":92.5,"maxAvg":92.5,"maxShit":2012,"countShit":1,"minShit":1900,"sumSHIt":12},{"courses_dept":"cpsc","courses_avg":92.43,"maxAvg":92.43,"maxShit":2009,"countShit":1,"minShit":1900,"sumSHIt":14},{"courses_dept":"cpsc","courses_avg":92.4,"maxAvg":92.4,"maxShit":2014,"countShit":1,"minShit":1900,"sumSHIt":30},{"courses_dept":"cpsc","courses_avg":92,"maxAvg":92,"maxShit":2010,"countShit":1,"minShit":1900,"sumSHIt":12},{"courses_dept":"cpsc","courses_avg":91.79,"maxAvg":91.79,"maxShit":2013,"countShit":1,"minShit":1900,"sumSHIt":38},{"courses_dept":"cpsc","courses_avg":91.25,"maxAvg":91.25,"maxShit":2011,"countShit":1,"minShit":1900,"sumSHIt":32},{"courses_dept":"cpsc","courses_avg":91.22,"maxAvg":91.22,"maxShit":2015,"countShit":2,"minShit":1900,"sumSHIt":126},{"courses_dept":"cpsc","courses_avg":91,"maxAvg":91,"maxShit":2010,"countShit":1,"minShit":1900,"sumSHIt":8},{"courses_dept":"cpsc","courses_avg":90.71,"maxAvg":90.71,"maxShit":2012,"countShit":1,"minShit":1900,"sumSHIt":14},{"courses_dept":"cpsc","courses_avg":90.6,"maxAvg":90.6,"maxShit":2013,"countShit":1,"minShit":1900,"sumSHIt":20},{"courses_dept":"cpsc","courses_avg":90.53,"maxAvg":90.53,"maxShit":2015,"countShit":1,"minShit":1900,"sumSHIt":118},{"courses_dept":"cpsc","courses_avg":90.27,"maxAvg":90.27,"maxShit":2008,"countShit":1,"minShit":2008,"sumSHIt":15},{"courses_dept":"cpsc","courses_avg":90.25,"maxAvg":90.25,"maxShit":2015,"countShit":1,"minShit":1900,"sumSHIt":8},{"courses_dept":"cpsc","courses_avg":90.14,"maxAvg":90.14,"maxShit":1900,"countShit":1,"minShit":1900,"sumSHIt":22},{"courses_dept":"cpsc","courses_avg":90.11,"maxAvg":90.11,"maxShit":2007,"countShit":1,"minShit":1900,"sumSHIt":18}]}

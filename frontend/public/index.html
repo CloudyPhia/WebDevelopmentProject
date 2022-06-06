@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title>310 Frontend Helyn & Sophia</title>
+	<link href="/style.css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+	<div class="Query-Area">
+		<div class="Query-Results">
+			<button id="perform-query" class = "button header">Perform Query :D</button>
+
+			<span id="performQueryTableError"></span>
+
+			<div style="overflow:scroll;height:50vh;width:auto;overflow:auto;margin-top: 50px; display: flex;
+			justify-content: center">
+				<table id="perform-query-table"></table>
+			</div>
+		</div>
+		<div class="Query-Builder">
+			<ul class = "query" id="query"></ul>
+		</div>
+	</div>
+
+	<div class="Right-Side"></div>
+	<div class = "Add-Dataset">
+		<h3 id="add-dataset-title">Add Dataset</h3>
+		<form name="datasetForm">
+			<label for="text-box" class="dataset-name">Dataset Name:</label>
+			<input id="text-box" name = "textBox" type = "text" class = "dataset form"><br>
+
+			<span class = "dataset-form">Add Dataset:</span>
+			<input id="add-dataset-button" type="file"
+				   name="myFile" class = "dataset form" accept="application/zip"/><br>
+
+			<input type="button" id="data-submit" class = "dataset form" value = "Submit">
+
+			<span id="addDatasetError" onclick="textContent = empty"></span>
+
+		</form>
+		<table id="list-dataset-table" class = "table dataset" >
+			<thead>
+			<tr>
+				<th>Added Datasets</th>
+			</tr>
+			</thead>
+		</table>
+	</div>
+
+	<div class="PerformQuery-Top">
+		<div class="Dataset-selector">
+
+			<h3 id="dataset-selector-title" class="top header">Dataset Selector</h3>
+
+
+
+			<label for="dataset-names" class="dataset-choose">Choose a dataset:</label>
+			<select name = "dataset-names" id = "dataset-names" class = "dataset-choose"></select>
+
+		</div>
+		<div class="Query-Selector">
+			<h3 id="query-editor-title" class="top header">Query Editor</h3>
+			<div id="query-editor-form">
+				<b id="query-editor-select">SELECT</b>
+				<select id="query-editor-field-select" class = "editor select"></select><br>
+				<input type="text" name="query-text-box" id="query-editor-text" class="editor text" size = "20">
+				<button id="query-submit">Add</button>
+			</div>
+		</div>
+	</div>
+	<div class="Pets">
+		<tr>
+			<h3 id="add-pet-title"> Pet Area! </h3>
+			<br>
+			<img src="/images/pippinpic.JPG" alt="Sophia's dog, Pippin!" class="center">
+			<br>
+			<img src="/images/Loki.png" alt="Helyn's cat, Loki!" class="side">
+			<img src="/images/Goldie.png" alt="Helyn's cat, Goldie!" class="side">
+		</tr>
+	</div>
+</div>
+<script type="text/javascript" src="/frontend.js"></script>
+</body>
+</html>

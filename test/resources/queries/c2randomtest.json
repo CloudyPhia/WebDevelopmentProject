@@ -1,0 +1,47 @@
+{
+	"title": "random",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"maxAvg"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"APPLY": [
+				{
+					"maxAvg": {
+						"MAX": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"courses_dept":"cpsc","courses_avg":95,"maxAvg":95},{"courses_dept":"cpsc","courses_avg":94.5,"maxAvg":94.5},{"courses_dept":"cpsc","courses_avg":94,"maxAvg":94},{"courses_dept":"cpsc","courses_avg":93.5,"maxAvg":93.5},{"courses_dept":"cpsc","courses_avg":93.38,"maxAvg":93.38},{"courses_dept":"cpsc","courses_avg":92.75,"maxAvg":92.75},{"courses_dept":"cpsc","courses_avg":92.63,"maxAvg":92.63},{"courses_dept":"cpsc","courses_avg":92.5,"maxAvg":92.5},{"courses_dept":"cpsc","courses_avg":92.43,"maxAvg":92.43},{"courses_dept":"cpsc","courses_avg":92.4,"maxAvg":92.4},{"courses_dept":"cpsc","courses_avg":92,"maxAvg":92},{"courses_dept":"cpsc","courses_avg":91.79,"maxAvg":91.79},{"courses_dept":"cpsc","courses_avg":91.25,"maxAvg":91.25},{"courses_dept":"cpsc","courses_avg":91.22,"maxAvg":91.22},{"courses_dept":"cpsc","courses_avg":91,"maxAvg":91},{"courses_dept":"cpsc","courses_avg":90.71,"maxAvg":90.71},{"courses_dept":"cpsc","courses_avg":90.6,"maxAvg":90.6},{"courses_dept":"cpsc","courses_avg":90.53,"maxAvg":90.53},{"courses_dept":"cpsc","courses_avg":90.27,"maxAvg":90.27},{"courses_dept":"cpsc","courses_avg":90.25,"maxAvg":90.25},{"courses_dept":"cpsc","courses_avg":90.14,"maxAvg":90.14},{"courses_dept":"cpsc","courses_avg":90.11,"maxAvg":90.11}]
+}

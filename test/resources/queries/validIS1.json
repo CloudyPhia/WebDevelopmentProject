@@ -1,0 +1,19 @@
+{
+	"title": "CHECK IS IS OKAY",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_dept": "hey"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"expected": [
+	]
+}

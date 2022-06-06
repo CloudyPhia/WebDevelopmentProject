@@ -1,0 +1,38 @@
+{
+	"title": "and should only have one key",
+	"input": {
+
+		"WHERE":{
+
+			"AND": [
+				{
+					"IS": {
+						"courses_title": "*rsrch*"
+					},
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+
+			]
+
+		},
+
+		"OPTIONS":{
+
+			"COLUMNS":[
+
+				"courses_title",
+
+				"courses_avg"
+
+			],
+
+			"ORDER":"courses_avg"
+
+		}
+
+	} ,
+	"errorExpected": true,
+	"expected": "InsightError"
+}

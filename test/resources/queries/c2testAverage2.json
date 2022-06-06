@@ -1,0 +1,36 @@
+{
+	"title": "TEST AVERAGE 1",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 95
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courseAverage"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"courseAverage"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept"
+			],
+			"APPLY": [
+				{
+					"courseAverage": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"courses_dept":"phar","courseAverage":95.07},{"courses_dept":"bmeg","courseAverage":95.15},{"courses_dept":"thtr","courseAverage":95.2},{"courses_dept":"hgse","courseAverage":95.28},{"courses_dept":"phth","courseAverage":95.37},{"courses_dept":"chbe","courseAverage":95.42},{"courses_dept":"phys","courseAverage":95.43},{"courses_dept":"edcp","courseAverage":95.58},{"courses_dept":"etec","courseAverage":95.59},{"courses_dept":"mine","courseAverage":95.65},{"courses_dept":"apsc","courseAverage":95.73},{"courses_dept":"kin","courseAverage":95.77},{"courses_dept":"psyc","courseAverage":95.88},{"courses_dept":"pcth","courseAverage":96},{"courses_dept":"phil","courseAverage":96},{"courses_dept":"musc","courseAverage":96.01},{"courses_dept":"sowk","courseAverage":96.05},{"courses_dept":"libr","courseAverage":96.1},{"courses_dept":"adhe","courseAverage":96.11},{"courses_dept":"edst","courseAverage":96.12},{"courses_dept":"mtrl","courseAverage":96.25},{"courses_dept":"civl","courseAverage":96.27},{"courses_dept":"educ","courseAverage":96.33},{"courses_dept":"epse","courseAverage":96.35},{"courses_dept":"frst","courseAverage":96.36},{"courses_dept":"cnps","courseAverage":96.39},{"courses_dept":"fipr","courseAverage":96.4},{"courses_dept":"crwr","courseAverage":96.44},{"courses_dept":"spph","courseAverage":96.46},{"courses_dept":"plan","courseAverage":96.47},{"courses_dept":"midw","courseAverage":96.5},{"courses_dept":"audi","courseAverage":96.9},{"courses_dept":"math","courseAverage":96.9},{"courses_dept":"arst","courseAverage":96.94},{"courses_dept":"nurs","courseAverage":97.1},{"courses_dept":"eece","courseAverage":98.75}]
+}

@@ -1,0 +1,50 @@
+{
+	"title": "min in transrooms",
+	"input": {
+		"WHERE": {
+			"OR": [
+				{
+					"IS": {
+						"rooms_fullname": "Food*"
+					}
+				},
+				{
+					"GT": {
+						"rooms_seats": 200
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"vadfasgsa",
+				"rooms_fullname"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"rooms_fullname"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_seats",
+				"rooms_lon",
+				"rooms_fullname",
+				"rooms_number",
+				"rooms_address",
+				"rooms_type",
+				"rooms_href"
+			],
+			"APPLY": [
+				{
+					"vadfasgsa": {
+						"AVG": "rooms_lon"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"vadfasgsa":-123.25,"rooms_fullname":"Biological Sciences"},{"vadfasgsa":-123.25,"rooms_fullname":"Buchanan"},{"vadfasgsa":-123.25,"rooms_fullname":"Centre for Interactive  Research on Sustainability"},{"vadfasgsa":-123.25,"rooms_fullname":"Chemistry"},{"vadfasgsa":-123.25,"rooms_fullname":"Chemistry"},{"vadfasgsa":-123.25,"rooms_fullname":"Earth Sciences Building"},{"vadfasgsa":-123.25,"rooms_fullname":"Food, Nutrition and Health"},{"vadfasgsa":-123.25,"rooms_fullname":"Food, Nutrition and Health"},{"vadfasgsa":-123.25,"rooms_fullname":"Food, Nutrition and Health"},{"vadfasgsa":-123.25,"rooms_fullname":"Food, Nutrition and Health"},{"vadfasgsa":-123.25,"rooms_fullname":"Food, Nutrition and Health"},{"vadfasgsa":-123.25,"rooms_fullname":"Food, Nutrition and Health"},{"vadfasgsa":-123.25,"rooms_fullname":"Forest Sciences Centre"},{"vadfasgsa":-123.26,"rooms_fullname":"Geography"},{"vadfasgsa":-123.25,"rooms_fullname":"Hebb"},{"vadfasgsa":-123.25,"rooms_fullname":"Hennings"},{"vadfasgsa":-123.25,"rooms_fullname":"Henry Angus"},{"vadfasgsa":-123.26,"rooms_fullname":"Leonard S. Klinck (also known as CSCI)"},{"vadfasgsa":-123.24,"rooms_fullname":"Life Sciences Centre"},{"vadfasgsa":-123.24,"rooms_fullname":"Life Sciences Centre"},{"vadfasgsa":-123.26,"rooms_fullname":"Mathematics"},{"vadfasgsa":-123.25,"rooms_fullname":"Neville Scarfe"},{"vadfasgsa":-123.24,"rooms_fullname":"Pharmaceutical Sciences Building"},{"vadfasgsa":-123.24,"rooms_fullname":"Robert F. Osborne Centre"},{"vadfasgsa":-123.25,"rooms_fullname":"Student Recreation Centre"},{"vadfasgsa":-123.25,"rooms_fullname":"Student Recreation Centre"},{"vadfasgsa":-123.25,"rooms_fullname":"Student Recreation Centre"},{"vadfasgsa":-123.25,"rooms_fullname":"Wesbrook"},{"vadfasgsa":-123.25,"rooms_fullname":"Woodward (Instructional Resources Centre-IRC)"}]}

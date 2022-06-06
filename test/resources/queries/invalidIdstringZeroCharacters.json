@@ -1,0 +1,32 @@
+{
+  "title" : "Referenced dataset id string should not be an empty string. Should be rejected with InsightError",
+  "input": {
+
+    "WHERE":{
+
+      "GT":{
+
+        "_avg":97
+
+      }
+
+    },
+
+    "OPTIONS":{
+
+      "COLUMNS":[
+
+        "_dept",
+
+        "_avg"
+
+      ],
+
+      "ORDER":"_avg"
+
+    }
+
+  },
+  "errorExpected": true,
+  "expected" : "InsightError"
+}

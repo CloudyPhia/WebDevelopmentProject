@@ -1,0 +1,37 @@
+{
+	"title": "can't have underscore in apply",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 96
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overallAvg",
+				"count_UNIQUE",
+				"courses_instructor"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title",
+				"courses_instructor"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				},
+				{
+					"count_UNIQUE": {
+						"COUNT": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"}

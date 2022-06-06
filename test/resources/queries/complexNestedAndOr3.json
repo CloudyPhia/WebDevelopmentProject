@@ -1,0 +1,56 @@
+{
+	"title": "complex nested and3",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"courses_year": 2015
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 80
+					}
+				},
+				{
+					"NOT": {
+						"IS": {
+							"courses_instructor": "*caleb"
+						}
+					}
+				},
+				{
+					"NOT": {
+						"IS": {
+							"courses_instructor": "*mike"
+						}
+					}
+				},
+				{
+					"NOT": {
+						"IS": {
+							"courses_instructor": "*christopher"
+						}
+					}
+				},
+				{
+					"IS": {
+						"courses_dept": "lled"
+					}
+				}
+			]
+
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"courses_instructor",
+				"courses_year"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"expected":[{"courses_dept":"lled","courses_avg":80.89,"courses_instructor":"haggerty, john","courses_year":2016},{"courses_dept":"lled","courses_avg":85.08,"courses_instructor":"shoemaker, kathryn","courses_year":2016},{"courses_dept":"lled","courses_avg":86.86,"courses_instructor":"bournot-trites, monique","courses_year":2016},{"courses_dept":"lled","courses_avg":89.47,"courses_instructor":"delvecchio, jennifer","courses_year":2016},{"courses_dept":"lled","courses_avg":93.2,"courses_instructor":"li, guofang","courses_year":2016}]
+}

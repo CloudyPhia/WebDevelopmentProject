@@ -1,0 +1,50 @@
+{
+	"title": "count rooms in trans",
+	"input": {
+		"WHERE": {
+			"OR": [
+				{
+					"IS": {
+						"rooms_fullname": "Food*"
+					}
+				},
+				{
+					"GT": {
+						"rooms_seats": 200
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"countseats",
+				"rooms_fullname"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"rooms_fullname"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_seats",
+				"rooms_lon",
+				"rooms_fullname",
+				"rooms_number",
+				"rooms_address",
+				"rooms_type",
+				"rooms_href"
+			],
+			"APPLY": [
+				{
+					"countseats": {
+						"COUNT": "rooms_name"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"countseats":1,"rooms_fullname":"Biological Sciences"},{"countseats":1,"rooms_fullname":"Buchanan"},{"countseats":1,"rooms_fullname":"Centre for Interactive  Research on Sustainability"},{"countseats":1,"rooms_fullname":"Chemistry"},{"countseats":1,"rooms_fullname":"Chemistry"},{"countseats":1,"rooms_fullname":"Earth Sciences Building"},{"countseats":1,"rooms_fullname":"Food, Nutrition and Health"},{"countseats":1,"rooms_fullname":"Food, Nutrition and Health"},{"countseats":1,"rooms_fullname":"Food, Nutrition and Health"},{"countseats":1,"rooms_fullname":"Food, Nutrition and Health"},{"countseats":1,"rooms_fullname":"Food, Nutrition and Health"},{"countseats":1,"rooms_fullname":"Food, Nutrition and Health"},{"countseats":1,"rooms_fullname":"Forest Sciences Centre"},{"countseats":1,"rooms_fullname":"Geography"},{"countseats":1,"rooms_fullname":"Hebb"},{"countseats":1,"rooms_fullname":"Hennings"},{"countseats":1,"rooms_fullname":"Henry Angus"},{"countseats":1,"rooms_fullname":"Leonard S. Klinck (also known as CSCI)"},{"countseats":1,"rooms_fullname":"Life Sciences Centre"},{"countseats":1,"rooms_fullname":"Life Sciences Centre"},{"countseats":1,"rooms_fullname":"Mathematics"},{"countseats":1,"rooms_fullname":"Neville Scarfe"},{"countseats":1,"rooms_fullname":"Pharmaceutical Sciences Building"},{"countseats":1,"rooms_fullname":"Robert F. Osborne Centre"},{"countseats":1,"rooms_fullname":"Student Recreation Centre"},{"countseats":1,"rooms_fullname":"Student Recreation Centre"},{"countseats":1,"rooms_fullname":"Student Recreation Centre"},{"countseats":1,"rooms_fullname":"Wesbrook"},{"countseats":1,"rooms_fullname":"Woodward (Instructional Resources Centre-IRC)"}]}

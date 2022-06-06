@@ -1,0 +1,32 @@
+{
+  "title" : "Should not be able to write a string for courses_avg, should give InsightError",
+  "input": {
+
+    "WHERE":{
+
+      "GT":{
+
+        "courses_avg": "Freddy?? You're supposed to be on lockdown! Vanessa... I'm... working on cpsc 310"
+
+      }
+
+    },
+
+    "OPTIONS":{
+
+      "COLUMNS":[
+
+        "courses_dept",
+
+        "courses_avg"
+
+      ],
+
+      "ORDER":"courses_avg"
+
+    }
+
+  },
+  "errorExpected": true,
+  "expected" : "InsightError"
+}

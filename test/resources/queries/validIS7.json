@@ -1,0 +1,20 @@
+{
+	"title": "checking it returns nothing with two words",
+	"input": {
+		"WHERE": {
+			"IS": {
+				"courses_dept": "adhe hello"
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"courses_id"
+			],
+			"ORDER": "courses_avg"
+		}
+	},
+	"expected": [
+	]
+}

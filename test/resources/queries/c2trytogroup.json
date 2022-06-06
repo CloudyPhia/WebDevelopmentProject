@@ -1,0 +1,42 @@
+{
+	"title": "grouppp",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"overallAvg",
+				"courses_dept",
+				"courses_instructor"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"courses_instructor"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept",
+				"courses_instructor"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"overallAvg":78.3,"courses_dept":"cpsc","courses_instructor":""},{"overallAvg":71.23,"courses_dept":"cpsc","courses_instructor":"acton, donald"},{"overallAvg":73.3,"courses_dept":"cpsc","courses_instructor":"aiello, william"},{"overallAvg":75.44,"courses_dept":"cpsc","courses_instructor":"allen, meghan"},{"overallAvg":75.95,"courses_dept":"cpsc","courses_instructor":"ascher, uri michael"},{"overallAvg":76.32,"courses_dept":"cpsc","courses_instructor":"ascher, uri michael;greif, chen"},{"overallAvg":87.93,"courses_dept":"cpsc","courses_instructor":"awad, ahmed"},{"overallAvg":78.67,"courses_dept":"cpsc","courses_instructor":"baniassad, elisa"},{"overallAvg":72.73,"courses_dept":"cpsc","courses_instructor":"belleville, patrice"},{"overallAvg":72.72,"courses_dept":"cpsc","courses_instructor":"berg, celina"},{"overallAvg":81.52,"courses_dept":"cpsc","courses_instructor":"beschastnikh, ivan"},{"overallAvg":78.7,"courses_dept":"cpsc","courses_instructor":"bessmeltsev, mikhail"},{"overallAvg":83.67,"courses_dept":"cpsc","courses_instructor":"booth, kellogg"},{"overallAvg":80.81,"courses_dept":"cpsc","courses_instructor":"bridson, robert"},{"overallAvg":80.15,"courses_dept":"cpsc","courses_instructor":"carenini, giuseppe"},{"overallAvg":74.38,"courses_dept":"cpsc","courses_instructor":"carter, paul martin"},{"overallAvg":73.48,"courses_dept":"cpsc","courses_instructor":"conati, cristina"},{"overallAvg":75.38,"courses_dept":"cpsc","courses_instructor":"cooper, kendra"},{"overallAvg":68.77,"courses_dept":"cpsc","courses_instructor":"darwish, mohammad mostafa"},{"overallAvg":80.75,"courses_dept":"cpsc","courses_instructor":"dawson, jessica"},{"overallAvg":80.24,"courses_dept":"cpsc","courses_instructor":"dawson, jessica;maclean, karon"},{"overallAvg":80.05,"courses_dept":"cpsc","courses_instructor":"de freitas, joao"},{"overallAvg":75.71,"courses_dept":"cpsc","courses_instructor":"de volder, kris"},{"overallAvg":75.7,"courses_dept":"cpsc","courses_instructor":"doucet, arnaud"},{"overallAvg":78.45,"courses_dept":"cpsc","courses_instructor":"dulat, margaret"},{"overallAvg":84.39,"courses_dept":"cpsc","courses_instructor":"dunfield, joshua"},{"overallAvg":81.09,"courses_dept":"cpsc","courses_instructor":"eiselt, kurt"},{"overallAvg":76.46,"courses_dept":"cpsc","courses_instructor":"ernst, neil"},{"overallAvg":78.66,"courses_dept":"cpsc","courses_instructor":"evans, william"},{"overallAvg":75.18,"courses_dept":"cpsc","courses_instructor":"feeley, michael"},{"overallAvg":81.94,"courses_dept":"cpsc","courses_instructor":"friedman, joel"},{"overallAvg":75.57,"courses_dept":"cpsc","courses_instructor":"fritz, thomas"},{"overallAvg":72.03,"courses_dept":"cpsc","courses_instructor":"gao, xi"},{"overallAvg":81.34,"courses_dept":"cpsc","courses_instructor":"garcia, ronald"},{"overallAvg":74.23,"courses_dept":"cpsc","courses_instructor":"gelbart, michael"},{"overallAvg":69.25,"courses_dept":"cpsc","courses_instructor":"goldberg, murray"},{"overallAvg":83.5,"courses_dept":"cpsc","courses_instructor":"greenstreet, mark"},{"overallAvg":77.69,"courses_dept":"cpsc","courses_instructor":"greif, chen"},{"overallAvg":83.08,"courses_dept":"cpsc","courses_instructor":"harvey, nicholas"},{"overallAvg":75.27,"courses_dept":"cpsc","courses_instructor":"heidrich, wolfgang"},{"overallAvg":83.06,"courses_dept":"cpsc","courses_instructor":"holmes, reid"},{"overallAvg":85.37,"courses_dept":"cpsc","courses_instructor":"hoos, holger"},{"overallAvg":76.38,"courses_dept":"cpsc","courses_instructor":"hu, alan"},{"overallAvg":74.61,"courses_dept":"cpsc","courses_instructor":"hutchinson, norman"},{"overallAvg":73.79,"courses_dept":"cpsc","courses_instructor":"hutter, frank"},{"overallAvg":74.54,"courses_dept":"cpsc","courses_instructor":"khosravi, hassan"},{"overallAvg":75.12,"courses_dept":"cpsc","courses_instructor":"kiczales, gregor"},{"overallAvg":73.88,"courses_dept":"cpsc","courses_instructor":"kirkpatrick, bonnie;manuch, jan"},{"overallAvg":73.69,"courses_dept":"cpsc","courses_instructor":"kirkpatrick, david"},{"overallAvg":76.15,"courses_dept":"cpsc","courses_instructor":"knorr, edwin max"},{"overallAvg":72.53,"courses_dept":"cpsc","courses_instructor":"kotthoff, lars"},{"overallAvg":79.76,"courses_dept":"cpsc","courses_instructor":"krasic, charles"},{"overallAvg":75.83,"courses_dept":"cpsc","courses_instructor":"lakshmanan, laks"},{"overallAvg":76.93,"courses_dept":"cpsc","courses_instructor":"leyton-brown, kevin"},{"overallAvg":71.77,"courses_dept":"cpsc","courses_instructor":"little, james joseph"},{"overallAvg":79.14,"courses_dept":"cpsc","courses_instructor":"luk, joseph"},{"overallAvg":78.48,"courses_dept":"cpsc","courses_instructor":"mackworth, alan"},{"overallAvg":82.54,"courses_dept":"cpsc","courses_instructor":"maclean, karon"},{"overallAvg":71.02,"courses_dept":"cpsc","courses_instructor":"malka, lior"},{"overallAvg":75.6,"courses_dept":"cpsc","courses_instructor":"manuch, jan"},{"overallAvg":78.83,"courses_dept":"cpsc","courses_instructor":"mcgrenere, joanna"},{"overallAvg":74.81,"courses_dept":"cpsc","courses_instructor":"meyer, irmtraud margret"},{"overallAvg":75.39,"courses_dept":"cpsc","courses_instructor":"mitchell, ian"},{"overallAvg":75.46,"courses_dept":"cpsc","courses_instructor":"munzner, tamara"},{"overallAvg":72.88,"courses_dept":"cpsc","courses_instructor":"murphy, gail"},{"overallAvg":79.78,"courses_dept":"cpsc","courses_instructor":"murphy, kevin"},{"overallAvg":80.18,"courses_dept":"cpsc","courses_instructor":"murphy-hill, emerson"},{"overallAvg":73.93,"courses_dept":"cpsc","courses_instructor":"ng, raymond tak-yan"},{"overallAvg":76.72,"courses_dept":"cpsc","courses_instructor":"pai, dinesh"},{"overallAvg":78.69,"courses_dept":"cpsc","courses_instructor":"palyart-lamarche, marc"},{"overallAvg":80.55,"courses_dept":"cpsc","courses_instructor":"poole, david"},{"overallAvg":73.83,"courses_dept":"cpsc","courses_instructor":"pottinger, rachel"},{"overallAvg":73.18,"courses_dept":"cpsc","courses_instructor":"rees, tyrone"},{"overallAvg":76.93,"courses_dept":"cpsc","courses_instructor":"sagaii, sara mahboubeh"},{"overallAvg":86.17,"courses_dept":"cpsc","courses_instructor":"schmidt, mark"},{"overallAvg":72.78,"courses_dept":"cpsc","courses_instructor":"schroeder, jonatan"},{"overallAvg":76.76,"courses_dept":"cpsc","courses_instructor":"sheffer, alla"},{"overallAvg":75.08,"courses_dept":"cpsc","courses_instructor":"shepherd, david"},{"overallAvg":76.46,"courses_dept":"cpsc","courses_instructor":"tompkins, david a d"},{"overallAvg":80.07,"courses_dept":"cpsc","courses_instructor":"tsiknis, georgios"},{"overallAvg":73.95,"courses_dept":"cpsc","courses_instructor":"tung, frederick"},{"overallAvg":70.94,"courses_dept":"cpsc","courses_instructor":"van de panne, michiel"},{"overallAvg":77.59,"courses_dept":"cpsc","courses_instructor":"voll, kimberly"},{"overallAvg":77.03,"courses_dept":"cpsc","courses_instructor":"vuong, son"},{"overallAvg":79.62,"courses_dept":"cpsc","courses_instructor":"wagner, alan"},{"overallAvg":71.22,"courses_dept":"cpsc","courses_instructor":"warfield, andrew"},{"overallAvg":81.78,"courses_dept":"cpsc","courses_instructor":"wohlstadter, eric"},{"overallAvg":74.74,"courses_dept":"cpsc","courses_instructor":"wolfman, steven"},{"overallAvg":74.58,"courses_dept":"cpsc","courses_instructor":"woodham, robert"}]
+}

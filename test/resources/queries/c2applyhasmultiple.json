@@ -1,0 +1,137 @@
+{
+	"title": "apply has multiple",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"rooms_furniture": "*Tables*"
+					}
+				},
+				{
+					"GT": {
+						"rooms_seats": 300
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"sumSeats",
+				"maxLat",
+				"minLon",
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_address",
+				"rooms_type",
+				"rooms_number",
+				"rooms_name",
+				"rooms_furniture",
+				"rooms_href",
+				"rooms_lat",
+				"rooms_lon"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"sumSeats",
+					"maxLat",
+					"minLon"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_address",
+				"rooms_type",
+				"rooms_number",
+				"rooms_name",
+				"rooms_furniture",
+				"rooms_href",
+				"rooms_lat",
+				"rooms_lon"
+			],
+			"APPLY": [
+				{
+					"sumSeats": {
+						"SUM": "rooms_seats"
+					}
+				},
+				{
+					"maxLat": {
+						"MAX": "rooms_lat"
+					}
+				},
+				{
+					"minLon": {
+						"MIN": "rooms_lon"
+					}
+				}
+			]
+		}
+	},
+	"expected": [
+		{
+			"sumSeats": 442,
+			"maxLat": 49.26047,
+			"minLon": -123.24467,
+			"rooms_fullname": "Robert F. Osborne Centre",
+			"rooms_shortname": "OSBO",
+			"rooms_address": "6108 Thunderbird Boulevard",
+			"rooms_type": "Open Design General Purpose",
+			"rooms_number": "A",
+			"rooms_name": "OSBO_A",
+			"rooms_furniture": "Classroom-Movable Tables & Chairs",
+			"rooms_href": "http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/OSBO-A",
+			"rooms_lat": 49.26047,
+			"rooms_lon": -123.24467
+		},
+		{
+			"sumSeats": 375,
+			"maxLat": 49.2661,
+			"minLon": -123.25165,
+			"rooms_fullname": "Hebb",
+			"rooms_shortname": "HEBB",
+			"rooms_address": "2045 East Mall",
+			"rooms_type": "Tiered Large Group",
+			"rooms_number": "100",
+			"rooms_name": "HEBB_100",
+			"rooms_furniture": "Classroom-Fixed Tables/Fixed Chairs",
+			"rooms_href": "http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/HEBB-100",
+			"rooms_lat": 49.2661,
+			"rooms_lon": -123.25165
+		},
+		{
+			"sumSeats": 350,
+			"maxLat": 49.26236,
+			"minLon": -123.24494,
+			"rooms_fullname": "Life Sciences Centre",
+			"rooms_shortname": "LSC",
+			"rooms_address": "2350 Health Sciences Mall",
+			"rooms_type": "Tiered Large Group",
+			"rooms_number": "1001",
+			"rooms_name": "LSC_1001",
+			"rooms_furniture": "Classroom-Fixed Tables/Movable Chairs",
+			"rooms_href": "http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/LSC-1001",
+			"rooms_lat": 49.26236,
+			"rooms_lon": -123.24494
+		},
+		{
+			"sumSeats": 350,
+			"maxLat": 49.26236,
+			"minLon": -123.24494,
+			"rooms_fullname": "Life Sciences Centre",
+			"rooms_shortname": "LSC",
+			"rooms_address": "2350 Health Sciences Mall",
+			"rooms_type": "Tiered Large Group",
+			"rooms_number": "1002",
+			"rooms_name": "LSC_1002",
+			"rooms_furniture": "Classroom-Fixed Tables/Movable Chairs",
+			"rooms_href": "http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/LSC-1002",
+			"rooms_lat": 49.26236,
+			"rooms_lon": -123.24494
+		}
+	]
+}

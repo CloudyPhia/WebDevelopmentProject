@@ -1,0 +1,261 @@
+#add-dataset-title {
+	text-align: center;
+	margin: auto;
+	font-family: "Comic Sans MS";
+	background-color: #d7e1ff;
+	display: block;
+}
+
+#add-pet-title {
+	text-align: center;
+	margin: auto;
+	font-family: "Comic Sans MS";
+	background-color: #d7e1ff;
+	display: block;
+}
+
+li>span:hover {
+	background-color: #ffffe1;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+#query-editor-form {
+	display: inline-block;
+}
+
+#query-editor-select {
+	background-color: #fdbca9;
+	font-size: large;
+	padding: 10px;
+	border-color: black;
+	border-width: 3px;
+	border-radius: 12px;
+	text-align: center;
+	font-family: "Comic Sans MS";
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.editor {
+	margin-left: 10px;
+	margin-top: 5px;
+	display: inline-block;
+	font-size: large;
+	font-family: "Comic Sans MS";
+	border-color: #228B22;
+}
+
+
+.dataset-name {
+	display: inline-block;
+	font-size: small;
+	font-family: "Comic Sans MS";
+	border-color: #228B22;
+}
+
+.dataset-form {
+	display: inline-block;
+	font-size: small;
+	font-family: "Comic Sans MS";
+	border-color: #228B22;
+}
+
+#query-editor-text {
+	visibility: hidden;
+	margin-left: 100px;
+	display: inline-block;
+	padding: 5px;
+	border-radius: 10px;
+	border-color: #228B22;
+	font-family: "Comic Sans MS";
+}
+
+#query-submit {
+	margin-left: 10%;
+	margin-top: 10px;
+	font-family: "Comic Sans MS";
+	font-size: large;
+	background-color: #fdbca9;
+	border-radius: 12px;
+}
+
+#query-submit:hover {
+	cursor: pointer;
+}
+
+.top.header {
+	text-align: center;
+	margin-top: auto;
+	font-family: "Comic Sans MS";
+	background-color: darksalmon;
+	display: block;
+	margin-bottom: 30px;
+}
+
+.dataset-choose {
+	display: inline-block;
+	font-size: large;
+	font-family: "Comic Sans MS";
+	border-color: #228B22;
+}
+
+.button {
+	background-color: #3f51b5;
+	border-color: black;
+	border-width: 1px;
+	border-radius: 12px;
+	color: white;
+	padding: 10px 24px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+	font-family: "Comic Sans MS";
+}
+
+.button.header {
+	margin: auto;
+}
+
+.button:hover {
+	cursor: pointer;
+	background-color: mintcream;
+	color: black;
+}
+
+.dataset.form {
+	display: inline-block;
+	margin: 5px;
+	font-family: "Comic Sans MS";
+}
+
+.column {
+	float: left;
+	padding: 10px;
+	display: block;
+	overflow: auto;
+	height: 100vh;
+}
+
+.left {
+	flex: 70%;
+	background-color: #ec7878;
+}
+
+.right {
+	flex: 30%;
+	background-color: #9ac1f3;
+}
+
+.row {
+	display: flex;
+	clear: both;
+	column-gap: 15px;
+	column-rule-color: white;
+	column-rule-width: 15px;
+}
+
+td, th {
+	border: 1px solid #000000;
+	padding: 0.5rem;
+}
+
+table.dataset {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	text-align: center;
+	background-color: #d7e1ff;
+}
+
+
+.container {  display: grid;
+	grid-template-columns: 1.5fr 0.7fr;
+	grid-template-rows: 0.7fr 0.6fr 1.8fr;
+	gap: 5px 5px;
+	grid-auto-flow: row;
+}
+
+.Query-Area {
+	overflow: auto;
+	display: grid;
+	grid-template-columns: 1.2fr 1.2fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 0% 5px;
+	grid-auto-flow: row;
+	grid-template-areas:
+    "Query-Builder Query-Results"
+    "Query-Builder Query-Results";
+	grid-area: 2 / 1 / 4 / 2;
+	background-color: #ec7878;
+	padding: 10px;
+}
+
+.Query-Results { grid-area: Query-Results;
+	background-color: #A3C4BC;
+	height: 70vh;
+	padding: 10px;
+}
+
+.Query-Builder { grid-area: Query-Builder;
+	background-color: #A3C4BC;
+	height: 70vh;
+	padding: 10px;
+	font-family: "Comic Sans MS";
+	font-size: larger;
+	line-height: 40px;
+}
+
+.Right-Side { grid-area: 1 / 2 / 4 / 3; }
+
+.Add-Dataset {
+	grid-area: 1 / 2 / 3 / 3;
+	background-color: #9ac1f3;
+	padding: 10px;
+}
+
+.PerformQuery-Top {  display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 5% 0.5%;
+	grid-auto-flow: row;
+	grid-template-areas:
+    "Dataset-selector Query-Selector";
+	grid-area: 1 / 1 / 2 / 2;
+	background-color: #ec7878;
+	padding: 10px;
+
+}
+
+.Dataset-selector {
+	grid-area: Dataset-selector;
+	background-color: #BFD7B5;
+	padding: 10px;
+}
+
+.Query-Selector { grid-area: Query-Selector;
+	background-color: #BFD7B5;
+	padding: 10px;
+}
+
+.Pets {
+	grid-area: 3 / 2 / 4 / 3;
+	background-color: #9ac1f3;
+	padding: 10px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
+.side {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 35%;
+}
+

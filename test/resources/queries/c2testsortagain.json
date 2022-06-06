@@ -1,0 +1,43 @@
+{
+	"title": "sort",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				},
+				{
+					"NOT": {
+						"IS": {
+							"courses_instructor": ""
+						}
+
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"courses_instructor"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"courses_instructor",
+					"courses_dept",
+					"courses_avg"
+				]
+			}
+		}
+	},
+	"expected":
+	[{"courses_dept":"cpsc","courses_avg":91.22,"courses_instructor":"beschastnikh, ivan"},{"courses_dept":"cpsc","courses_avg":94.5,"courses_instructor":"carenini, giuseppe"},{"courses_dept":"cpsc","courses_avg":91,"courses_instructor":"friedman, joel"},{"courses_dept":"cpsc","courses_avg":92.43,"courses_instructor":"friedman, joel"},{"courses_dept":"cpsc","courses_avg":94,"courses_instructor":"friedman, joel"},{"courses_dept":"cpsc","courses_avg":92.75,"courses_instructor":"harvey, nicholas"},{"courses_dept":"cpsc","courses_avg":91.25,"courses_instructor":"hoos, holger"},{"courses_dept":"cpsc","courses_avg":92.63,"courses_instructor":"knorr, edwin max"},{"courses_dept":"cpsc","courses_avg":93.5,"courses_instructor":"knorr, edwin max"},{"courses_dept":"cpsc","courses_avg":90.11,"courses_instructor":"krasic, charles"},{"courses_dept":"cpsc","courses_avg":90.71,"courses_instructor":"poole, david"},{"courses_dept":"cpsc","courses_avg":90.53,"courses_instructor":"schmidt, mark"},{"courses_dept":"cpsc","courses_avg":91.22,"courses_instructor":"schmidt, mark"},{"courses_dept":"cpsc","courses_avg":90.25,"courses_instructor":"tsiknis, georgios"},{"courses_dept":"cpsc","courses_avg":92.5,"courses_instructor":"tsiknis, georgios"},{"courses_dept":"cpsc","courses_avg":93.38,"courses_instructor":"tsiknis, georgios"},{"courses_dept":"cpsc","courses_avg":91.79,"courses_instructor":"wohlstadter, eric"},{"courses_dept":"cpsc","courses_avg":92,"courses_instructor":"wolfman, steven"}]}

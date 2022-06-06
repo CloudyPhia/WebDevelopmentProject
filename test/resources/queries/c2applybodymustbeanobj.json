@@ -1,0 +1,70 @@
+{
+	"title": "apply body ust be a obj",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"maxAvg",
+				"maxShit",
+				"countShit",
+				"minShit",
+				"sumSHIt"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"APPLY": [
+				{
+					"maxAvg": {
+						"MAX": "courses_avg"
+					}
+				},
+				{
+					"countShit": {
+						"COUNT": "courses_id"
+					}
+				},
+				{
+					"maxShit": {
+						"MAX": "courses_year"
+					}
+				},
+				{
+					"minShit": {
+						"MIN": "courses_year"
+					}
+				},
+				{
+					"SUM": "courses_pass"
+
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

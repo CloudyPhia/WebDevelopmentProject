@@ -1,0 +1,47 @@
+{
+	"title": "random",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"maxAvg",
+				"courses_year",
+				"courses_id"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"courses_year",
+					"courses_id"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_year",
+				"courses_id"
+			],
+			"APPLY": [
+				{
+					"maxAvg": {
+						"MAX": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"maxAvg":90.53,"courses_year":2015,"courses_id":"540"},{"maxAvg":91.22,"courses_year":2015,"courses_id":"527"},{"maxAvg":90.25,"courses_year":2015,"courses_id":"449"},{"maxAvg":95,"courses_year":2014,"courses_id":"589"},{"maxAvg":91.22,"courses_year":2014,"courses_id":"540"},{"maxAvg":92.4,"courses_year":2014,"courses_id":"490"},{"maxAvg":91.79,"courses_year":2013,"courses_id":"507"},{"maxAvg":90.6,"courses_year":2013,"courses_id":"490"},{"maxAvg":93.38,"courses_year":2013,"courses_id":"449"},{"maxAvg":90.71,"courses_year":2012,"courses_id":"522"},{"maxAvg":92.75,"courses_year":2012,"courses_id":"501"},{"maxAvg":92.5,"courses_year":2012,"courses_id":"449"},{"maxAvg":93.5,"courses_year":2011,"courses_id":"449"},{"maxAvg":91.25,"courses_year":2011,"courses_id":"445"},{"maxAvg":91,"courses_year":2010,"courses_id":"501"},{"maxAvg":92,"courses_year":2010,"courses_id":"490"},{"maxAvg":92.43,"courses_year":2009,"courses_id":"501"},{"maxAvg":92.63,"courses_year":2009,"courses_id":"449"},{"maxAvg":90.27,"courses_year":2008,"courses_id":"490"},{"maxAvg":90.11,"courses_year":2007,"courses_id":"527"},{"maxAvg":94.5,"courses_year":2007,"courses_id":"503"},{"maxAvg":94,"courses_year":2007,"courses_id":"501"},{"maxAvg":95,"courses_year":1900,"courses_id":"589"},{"maxAvg":91.22,"courses_year":1900,"courses_id":"540"},{"maxAvg":91.22,"courses_year":1900,"courses_id":"527"},{"maxAvg":90.71,"courses_year":1900,"courses_id":"522"},{"maxAvg":91.79,"courses_year":1900,"courses_id":"507"},{"maxAvg":94.5,"courses_year":1900,"courses_id":"503"},{"maxAvg":94,"courses_year":1900,"courses_id":"501"},{"maxAvg":92.4,"courses_year":1900,"courses_id":"490"},{"maxAvg":93.5,"courses_year":1900,"courses_id":"449"},{"maxAvg":91.25,"courses_year":1900,"courses_id":"445"}]}

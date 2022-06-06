@@ -1,0 +1,69 @@
+{
+	"title": "apply body ust 1 key but has 2",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_dept",
+				"courses_avg",
+				"maxAvg",
+				"maxShit",
+				"countShit",
+				"minShit",
+				"sumSHIt"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxAvg"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_dept",
+				"courses_avg"
+			],
+			"APPLY": [
+				{
+					"maxAvg": {
+						"MAX": "courses_avg"
+					}
+				},
+				{
+					"countShit": {
+						"COUNT": "courses_id"
+					}
+				},
+				{
+					"maxShit": {
+						"MAX": "courses_year"
+					}
+				},
+				{
+					"sumSHIt": {
+						"SUM": "courses_pass"
+					},
+					"minShit": {
+						"MIN": "courses_year"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

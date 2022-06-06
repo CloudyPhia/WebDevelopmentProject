@@ -1,0 +1,61 @@
+{
+	"title": "Keys in COLUMNS must be in GROUP or APPLY when TRANSFORMATIONS is present",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"GT": {
+						"courses_avg": 90.4
+					}
+				},
+				{
+					"LT": {
+						"courses_avg": 90.80
+					}
+				},
+				{
+					"OR": [
+						{
+							"IS": {
+								"courses_dept": "cnps"
+							}
+						},
+						{
+							"IS": {
+								"courses_dept": "epse"
+							}
+						}
+					]
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"countPass",
+				"courses_avg",
+				"courses_dept",
+				"courses_fail"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"countPass"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_avg",
+				"courses_dept"
+			],
+			"APPLY": [
+				{
+					"countPass": {
+						"COUNT": "courses_pass"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"}

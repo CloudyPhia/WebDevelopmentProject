@@ -1,0 +1,32 @@
+{
+	"title": "should only have one key",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"courses_avg": 96
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"courses_title",
+				"overallAvg",
+				"courses_instructor"
+			]
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_title",
+				"courses_instructor"
+			],
+			"APPLY": [
+				{
+					"overallAvg": {
+						"AVG": "courses_avg",
+						"MAX": "courses_max"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"}

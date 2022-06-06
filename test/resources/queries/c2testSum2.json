@@ -1,0 +1,36 @@
+{
+	"title": "TEST SUM 2",
+	"input": {
+		"WHERE": {
+			"GT": {
+				"rooms_seats": 100
+			}
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"rooms_furniture",
+				"sumSeats"
+			],
+			"ORDER": {
+				"dir": "UP",
+				"keys": [
+					"sumSeats"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_furniture"
+			],
+			"APPLY": [
+				{
+					"sumSeats": {
+						"SUM": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"rooms_furniture":"Classroom-Hybrid Furniture","sumSeats":150},{"rooms_furniture":"Classroom-Fixed Tables/Fixed Chairs","sumSeats":1392},{"rooms_furniture":"Classroom-Movable Tables & Chairs","sumSeats":1451},{"rooms_furniture":"Classroom-Fixed Tables/Movable Chairs","sumSeats":3243},{"rooms_furniture":"Classroom-Fixed Tablets","sumSeats":5726}]
+}

@@ -1,0 +1,61 @@
+{
+	"title": "sortmisspell",
+	"input": {
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"courses_dept": "cpsc*"
+					}
+				},
+				{
+					"GT": {
+						"courses_avg": 90
+					}
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"maxAvg",
+				"courses_year",
+				"courses_avg",
+				"courses_instructor",
+				"courses_dept",
+				"courses_uuid",
+				"courses_id"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxAvg",
+					"courses_year",
+					"courses_avg",
+					"courses_instructor",
+					"courses_dept",
+					"courses_uuid",
+					"courses_id"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"courses_year",
+				"courses_avg",
+				"courses_instructor",
+				"courses_dept",
+				"courses_uuid",
+				"courses_id"
+			],
+			"APPLY": [
+				{
+					"maxAvg": {
+						"GT": "courses_avg"
+					}
+				}
+			]
+		}
+	},
+	"errorExpected": true,
+	"expected": "InsightError"
+}

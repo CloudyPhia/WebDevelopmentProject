@@ -1,0 +1,32 @@
+{
+  "title" : "Referenced dataset id string should not contain underscores. Should be rejected with InsightError",
+  "input": {
+
+    "WHERE":{
+
+      "GT":{
+
+        "_c_o_u_r_s_e_s__avg":97
+
+      }
+
+    },
+
+    "OPTIONS":{
+
+      "COLUMNS":[
+
+        "_c_o_u_r_s_e_s__dept",
+
+        "_c_o_u_r_s_e_s__avg"
+
+      ],
+
+      "ORDER":"_c_o_u_r_s_e_s__avg"
+
+    }
+
+  },
+  "errorExpected": true,
+  "expected" : "InsightError"
+}

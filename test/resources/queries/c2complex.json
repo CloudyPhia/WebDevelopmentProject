@@ -1,0 +1,82 @@
+{
+	"title": "complex c2",
+	"input":{
+		"WHERE": {
+			"AND": [
+				{
+					"IS": {
+						"rooms_type": "*Open*"
+					}
+				},
+				{
+					"GT": {
+						"rooms_seats": 50
+					}
+				},
+				{
+					"AND": [
+						{
+							"IS": {
+								"rooms_furniture": "*Chairs*"
+							}
+						},
+						{
+							"GT": {
+								"rooms_lat": 49
+							}
+						},
+						{
+							"LT": {
+								"rooms_lon": -120
+							}
+						}
+					]
+				}
+			]
+		},
+		"OPTIONS": {
+			"COLUMNS": [
+				"maxSeats",
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_address",
+				"rooms_type",
+				"rooms_number",
+				"rooms_name",
+				"rooms_furniture",
+				"rooms_href",
+				"rooms_lat",
+				"rooms_lon"
+			],
+			"ORDER": {
+				"dir": "DOWN",
+				"keys": [
+					"maxSeats"
+				]
+			}
+		},
+		"TRANSFORMATIONS": {
+			"GROUP": [
+				"rooms_fullname",
+				"rooms_shortname",
+				"rooms_address",
+				"rooms_type",
+				"rooms_number",
+				"rooms_name",
+				"rooms_furniture",
+				"rooms_href",
+				"rooms_lat",
+				"rooms_lon"
+			],
+			"APPLY": [
+				{
+					"maxSeats": {
+						"MAX": "rooms_seats"
+					}
+				}
+			]
+		}
+	},
+	"expected":
+	[{"maxSeats":442,"rooms_fullname":"Robert F. Osborne Centre","rooms_shortname":"OSBO","rooms_address":"6108 Thunderbird Boulevard","rooms_type":"Open Design General Purpose","rooms_number":"A","rooms_name":"OSBO_A","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/OSBO-A","rooms_lat":49.26047,"rooms_lon":-123.24467},{"maxSeats":112,"rooms_fullname":"Irving K Barber Learning Centre","rooms_shortname":"IBLC","rooms_address":"1961 East Mall V6T 1Z1","rooms_type":"Open Design General Purpose","rooms_number":"261","rooms_name":"IBLC_261","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/IBLC-261","rooms_lat":49.26766,"rooms_lon":-123.2521},{"maxSeats":100,"rooms_fullname":"Geography","rooms_shortname":"GEOG","rooms_address":"1984 West Mall","rooms_type":"Open Design General Purpose","rooms_number":"200","rooms_name":"GEOG_200","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/GEOG-200","rooms_lat":49.26605,"rooms_lon":-123.25623},{"maxSeats":84,"rooms_fullname":"MacLeod","rooms_shortname":"MCLD","rooms_address":"2356 Main Mall","rooms_type":"Open Design General Purpose","rooms_number":"254","rooms_name":"MCLD_254","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/MCLD-254","rooms_lat":49.26176,"rooms_lon":-123.24935},{"maxSeats":80,"rooms_fullname":"Henry Angus","rooms_shortname":"ANGU","rooms_address":"2053 Main Mall","rooms_type":"Open Design General Purpose","rooms_number":"254","rooms_name":"ANGU_254","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ANGU-254","rooms_lat":49.26486,"rooms_lon":-123.25364},{"maxSeats":75,"rooms_fullname":"Leonard S. Klinck (also known as CSCI)","rooms_shortname":"LSK","rooms_address":"6356 Agricultural Road","rooms_type":"Open Design General Purpose","rooms_number":"460","rooms_name":"LSK_460","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/LSK-460","rooms_lat":49.26545,"rooms_lon":-123.25533},{"maxSeats":72,"rooms_fullname":"Geography","rooms_shortname":"GEOG","rooms_address":"1984 West Mall","rooms_type":"Open Design General Purpose","rooms_number":"212","rooms_name":"GEOG_212","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/GEOG-212","rooms_lat":49.26605,"rooms_lon":-123.25623},{"maxSeats":72,"rooms_fullname":"Orchard Commons","rooms_shortname":"ORCH","rooms_address":"6363 Agronomy Road","rooms_type":"Open Design General Purpose","rooms_number":"3074","rooms_name":"ORCH_3074","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ORCH-3074","rooms_lat":49.26048,"rooms_lon":-123.24944},{"maxSeats":72,"rooms_fullname":"Pharmaceutical Sciences Building","rooms_shortname":"PHRM","rooms_address":"2405 Wesbrook Mall","rooms_type":"Open Design General Purpose","rooms_number":"3208","rooms_name":"PHRM_3208","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/PHRM-3208","rooms_lat":49.26229,"rooms_lon":-123.24342},{"maxSeats":66,"rooms_fullname":"School of Population and Public Health","rooms_shortname":"SPPH","rooms_address":"2206 East Mall","rooms_type":"Open Design General Purpose","rooms_number":"B151","rooms_name":"SPPH_B151","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/SPPH-B151","rooms_lat":49.2642,"rooms_lon":-123.24842},{"maxSeats":63,"rooms_fullname":"Frank Forward","rooms_shortname":"FORW","rooms_address":"6350 Stores Road","rooms_type":"Open Design General Purpose","rooms_number":"303","rooms_name":"FORW_303","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/FORW-303","rooms_lat":49.26176,"rooms_lon":-123.25179},{"maxSeats":60,"rooms_fullname":"Chemical and Biological Engineering Building","rooms_shortname":"CHBE","rooms_address":"2360 East Mall V6T 1Z3","rooms_type":"Open Design General Purpose","rooms_number":"103","rooms_name":"CHBE_103","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/CHBE-103","rooms_lat":49.26228,"rooms_lon":-123.24718},{"maxSeats":60,"rooms_fullname":"Geography","rooms_shortname":"GEOG","rooms_address":"1984 West Mall","rooms_type":"Open Design General Purpose","rooms_number":"101","rooms_name":"GEOG_101","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/GEOG-101","rooms_lat":49.26605,"rooms_lon":-123.25623},{"maxSeats":60,"rooms_fullname":"Geography","rooms_shortname":"GEOG","rooms_address":"1984 West Mall","rooms_type":"Open Design General Purpose","rooms_number":"147","rooms_name":"GEOG_147","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/GEOG-147","rooms_lat":49.26605,"rooms_lon":-123.25623},{"maxSeats":60,"rooms_fullname":"MacLeod","rooms_shortname":"MCLD","rooms_address":"2356 Main Mall","rooms_type":"Open Design General Purpose","rooms_number":"214","rooms_name":"MCLD_214","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/MCLD-214","rooms_lat":49.26176,"rooms_lon":-123.24935},{"maxSeats":60,"rooms_fullname":"MacLeod","rooms_shortname":"MCLD","rooms_address":"2356 Main Mall","rooms_type":"Open Design General Purpose","rooms_number":"242","rooms_name":"MCLD_242","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/MCLD-242","rooms_lat":49.26176,"rooms_lon":-123.24935},{"maxSeats":55,"rooms_fullname":"The Leon and Thea Koerner University Centre","rooms_shortname":"UCLL","rooms_address":"6331 Crescent Road V6T 1Z1","rooms_type":"Open Design General Purpose","rooms_number":"103","rooms_name":"UCLL_103","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/UCLL-103","rooms_lat":49.26867,"rooms_lon":-123.25692},{"maxSeats":54,"rooms_fullname":"Hebb","rooms_shortname":"HEBB","rooms_address":"2045 East Mall","rooms_type":"Open Design General Purpose","rooms_number":"10","rooms_name":"HEBB_10","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/HEBB-10","rooms_lat":49.2661,"rooms_lon":-123.25165},{"maxSeats":54,"rooms_fullname":"Hebb","rooms_shortname":"HEBB","rooms_address":"2045 East Mall","rooms_type":"Open Design General Purpose","rooms_number":"12","rooms_name":"HEBB_12","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/HEBB-12","rooms_lat":49.2661,"rooms_lon":-123.25165},{"maxSeats":54,"rooms_fullname":"Hebb","rooms_shortname":"HEBB","rooms_address":"2045 East Mall","rooms_type":"Open Design General Purpose","rooms_number":"13","rooms_name":"HEBB_13","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/HEBB-13","rooms_lat":49.2661,"rooms_lon":-123.25165},{"maxSeats":54,"rooms_fullname":"Henry Angus","rooms_shortname":"ANGU","rooms_address":"2053 Main Mall","rooms_type":"Open Design General Purpose","rooms_number":"291","rooms_name":"ANGU_291","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ANGU-291","rooms_lat":49.26486,"rooms_lon":-123.25364},{"maxSeats":54,"rooms_fullname":"Henry Angus","rooms_shortname":"ANGU","rooms_address":"2053 Main Mall","rooms_type":"Open Design General Purpose","rooms_number":"295","rooms_name":"ANGU_295","rooms_furniture":"Classroom-Fixed Tables/Movable Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ANGU-295","rooms_lat":49.26486,"rooms_lon":-123.25364},{"maxSeats":53,"rooms_fullname":"Henry Angus","rooms_shortname":"ANGU","rooms_address":"2053 Main Mall","rooms_type":"Open Design General Purpose","rooms_number":"435","rooms_name":"ANGU_435","rooms_furniture":"Classroom-Movable Tables & Chairs","rooms_href":"http://students.ubc.ca/campus/discover/buildings-and-classrooms/room/ANGU-435","rooms_lat":49.26486,"rooms_lon":-123.25364}]
+}
